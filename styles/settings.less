@@ -1,0 +1,27 @@
+@import "ui-variables";
+@import "ui-mixins";
+
+.settings-view .package-card {
+  .ui-inset-shadow;
+  border: 0;
+  &, &:hover {
+    background: fade(@highlight-2-color, 10%);
+  }
+}
+
+.settings-view input[type="checkbox"] {
+  background: white;
+  .ui-inset-shadow;
+  &:checked {
+    background: white;
+    &::before, &::after {
+      background: black;
+    }
+  }
+  &:focus {
+    .ui-inset-shadow;
+    & ~ .setting-title {
+      outline: 1px dotted black;
+    }
+  }
+}

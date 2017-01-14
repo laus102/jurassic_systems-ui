@@ -1,0 +1,69 @@
+@import "ui-variables";
+@import "ui-mixins";
+
+.btn-background (@color, @hover-color, @selected-color, @border-color, @text-color, @text-color-hover) {
+  @active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  color: @text-color;
+  background-color: transparent;
+  &:active,
+  &.selected:hover:active {
+  }
+  &.selected,
+  &.selected:hover {
+    color: @text-color-selected;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  }
+  &.selected:hover {
+  }
+}
+
+.btn-variant (@color) {
+  @bg: darken(@color, 10%);
+  @hover: @color;
+  @selected: @color;
+  @border: fadeout(darken(@color, 20%), 50%);
+  .btn-background(@bg, @hover, @selected, @border, @text-color-selected, @text-color-selected);
+}
+
+.btn {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px; right: 4px; bottom: 4px; left: 3px;
+    pointer-events: none;
+  }
+  &:focus::after {
+    outline: 1px dotted black;
+  }
+  .ui-raised-shadow;
+  &:focus {
+    .ui-raised-shadow-active;
+    outline: none;
+  }
+  &:active {
+    .ui-inset-shadow-active;
+  }
+  .btn-background(@button-background-color, @button-background-color-hover, @button-background-color-selected, @button-border-color, @text-color, @text-color-highlight);
+}
+
+.btn.btn-primary {
+  .btn-variant(@background-color-info);
+}
+.btn.btn-info {
+  .btn-variant(@background-color-info);
+}
+.btn.btn-success {
+  .btn-variant(@background-color-success);
+}
+.btn.btn-warning {
+  .btn-variant(@background-color-warning);
+}
+.btn.btn-error {
+  .btn-variant(@background-color-error);
+}
+
+.btn-group > .btn {
+  border: none;
+}

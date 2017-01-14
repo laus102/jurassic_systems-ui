@@ -1,0 +1,11 @@
+{
+  "name": "jurassicsystems-ui",
+  "theme": "ui",
+  "version": "0.0.0",
+  "description": "A purely aesthetic UI theme inspired by Dennis Nedry’s Silicon Graphics IRIX system from the 1993 film 'Jurassic Park.'",
+  "repository": "https://github.com/laus102/jurassic_systems-ui.git",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

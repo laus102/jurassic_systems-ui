@@ -1,0 +1,110 @@
+@import "ui-variables";
+@import "ui-mixins";
+@tab-radius: 3px;
+@modified-icon-width: 8px;
+@tab-skew: 30deg;
+@tab-top-padding: 8px;
+@tab-bottom-border-height: 0;
+@tab-border: 1px solid @tab-border-color;
+@tab-max-width: 160px;
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  background: @base-background-color;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: @tab-bottom-border-height;
+    left: 0;
+    right: 0;
+    background-color: @tab-background-color-active;
+    border-bottom: 1px solid @tab-bar-border-color;
+    pointer-events: none;
+  }
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    max-width: @tab-max-width;
+    height: @tab-height;
+    box-sizing: border-box;
+    line-height: @tab-height;
+    color: @text-color;
+    padding: 0;
+    margin: 0 0 0 0;
+    .ui-tab-shadow;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    transition: color .1s ease-in;
+    padding: 0px 6px 4px 6px;
+
+    .close-icon {
+      right: 6px;
+      z-index: 3;
+      text-align: right;
+      line-height: @tab-height;
+      color: @text-color;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    &.modified:not(:hover) .close-icon {
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+    }
+
+    &.modified:hover .close-icon:hover {
+      color: @text-color-highlight;
+    }
+
+    .title {
+      position: relative;
+      z-index: 1;
+      padding-right: 10px
+    }
+  }
+
+  .tab.active {
+    z-index: 1;
+    margin-top: -2px;
+    height: @tab-height + 2px;
+    border-bottom: 1px solid @base-background-color;
+
+    .close-icon {
+      line-height: @tab-height - 1px;
+      color: @text-color;
+    }
+  }
+
+  .tab:hover {
+    color: @text-color-highlight;
+  }
+
+  .tab.active:hover .close-icon {
+    color: @text-color;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    margin-left: -9px; // center between tabs
+    pointer-events: none;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height - 2px;
+    }
+  }
+}
