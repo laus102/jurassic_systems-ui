@@ -1,4 +1,4 @@
-# Jurassic Systems - Syntax
+# Jurassic Systems - UI
 
 A purely aesthetic UI theme inspired by Dennis Nedry’s Silicon Graphics IRIX system from the 1993 film 'Jurassic Park.'
 
@@ -6,9 +6,11 @@ A purely aesthetic UI theme inspired by Dennis Nedry’s Silicon Graphics IRIX s
 
 ![PERMISSION DENIED](http://i.imgur.com/tlYKG9i.png)
 
-![Text Editor](http://i.imgur.com/Mny70C4.png "Note: Using jurassicsystems-syntax")
+![Ah Ah Ah...](http://i.imgur.com/nEtiuCm.png)
 
 ![To the filter](http://i.imgur.com/tEcpv11.png)
+
+![Syntax Coloring](http://i.imgur.com/cGPYxjV.png "Note: Using jurassicsystems-syntax")
 
 For maximum effect, this UI theme should be paired with its corresponding syntax theme, **jurassicsystems-syntax**
 Repository for jurassicsystems-syntax: https://github.com/laus102/jurassicsystems-syntax.git
